@@ -49,6 +49,31 @@ const seatMetadata = {
     maxColumn: 10,
     maxRow: 3,
   },
+  mid: {
+    zoneName: "Middle Area",
+    maxColumn: 10,
+    maxRow: 3,
+  },
+  leftside: {
+    zoneName: "Left Side",
+    maxColumn: 10,
+    maxRow: 3,
+  },
+  rightside: {
+    zoneName: "Right Side",
+    maxColumn: 10,
+    maxRow: 3,
+  },
+  standing: {
+    zoneName: "Standing Area",
+    maxColumn: 10,
+    maxRow: 3,
+  },
+  viphitouch: {
+    zoneName: "VIP with Hi - Touch",
+    maxColumn: 10,
+    maxRow: 3,
+  },
 };
 
 const seatPricing = [
