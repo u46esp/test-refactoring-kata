@@ -8,38 +8,38 @@ const root = createRoot(rootElement);
 
 const seatData = {
   furthest: [
-    { seatNumber: "1A", availability: "Available" },
-    { seatNumber: "1B", availability: "Available" },
-    { seatNumber: "1C", availability: "Available" },
-    { seatNumber: "1D", availability: "Available" },
-    { seatNumber: "1E", availability: "Available" },
-    { seatNumber: "1F", availability: "Available" },
-    { seatNumber: "1G", availability: "Available" },
-    { seatNumber: "1H", availability: "Available" },
-    { seatNumber: "1J", availability: "Available" },
-    { seatNumber: "1K", availability: "Available" },
+    { seatNumber: "1A", row: 1, column: 1, availability: "Available" },
+    { seatNumber: "1B", row: 1, column: 2, availability: "Available" },
+    { seatNumber: "1C", row: 1, column: 3, availability: "Available" },
+    { seatNumber: "1D", row: 1, column: 4, availability: "Available" },
+    { seatNumber: "1E", row: 1, column: 5, availability: "Available" },
+    { seatNumber: "1F", row: 1, column: 6, availability: "Available" },
+    { seatNumber: "1G", row: 1, column: 7, availability: "Available" },
+    { seatNumber: "1H", row: 1, column: 8, availability: "Available" },
+    { seatNumber: "1J", row: 1, column: 9, availability: "Available" },
+    { seatNumber: "1K", row: 1, column: 10, availability: "Available" },
 
-    { seatNumber: "2A", availability: "Available" },
-    { seatNumber: "2B", availability: "Available" },
-    { seatNumber: "2C", availability: "Available" },
-    { seatNumber: "2D", availability: "Available" },
-    { seatNumber: "2E", availability: "Available" },
-    { seatNumber: "2F", availability: "Available" },
-    { seatNumber: "2G", availability: "Available" },
-    { seatNumber: "2H", availability: "Available" },
-    { seatNumber: "2J", availability: "Available" },
-    { seatNumber: "2K", availability: "Available" },
+    { seatNumber: "2A", row: 1, column: 1, availability: "Available" },
+    { seatNumber: "2B", row: 1, column: 2, availability: "Available" },
+    { seatNumber: "2C", row: 1, column: 3, availability: "Available" },
+    { seatNumber: "2D", row: 1, column: 4, availability: "Available" },
+    { seatNumber: "2E", row: 1, column: 5, availability: "Available" },
+    { seatNumber: "2F", row: 1, column: 6, availability: "Available" },
+    { seatNumber: "2G", row: 1, column: 7, availability: "Available" },
+    { seatNumber: "2H", row: 1, column: 8, availability: "Available" },
+    { seatNumber: "2J", row: 1, column: 9, availability: "Available" },
+    { seatNumber: "2K", row: 1, column: 10, availability: "Available" },
 
-    { seatNumber: "3A", availability: "Available" },
-    { seatNumber: "3B", availability: "Available" },
-    { seatNumber: "3C", availability: "Available" },
-    { seatNumber: "3D", availability: "Available" },
-    { seatNumber: "3E", availability: "Available" },
-    { seatNumber: "3F", availability: "Available" },
-    { seatNumber: "3G", availability: "Available" },
-    { seatNumber: "3H", availability: "Available" },
-    { seatNumber: "3J", availability: "Available" },
-    { seatNumber: "3K", availability: "Available" },
+    { seatNumber: "3A", row: 1, column: 1, availability: "Available" },
+    { seatNumber: "3B", row: 1, column: 2, availability: "Available" },
+    { seatNumber: "3C", row: 1, column: 3, availability: "Available" },
+    { seatNumber: "3D", row: 1, column: 4, availability: "Available" },
+    { seatNumber: "3E", row: 1, column: 5, availability: "Available" },
+    { seatNumber: "3F", row: 1, column: 6, availability: "Available" },
+    { seatNumber: "3G", row: 1, column: 7, availability: "Available" },
+    { seatNumber: "3H", row: 1, column: 8, availability: "Available" },
+    { seatNumber: "3J", row: 1, column: 9, availability: "Available" },
+    { seatNumber: "3K", row: 1, column: 10, availability: "Available" },
   ],
 };
 
@@ -65,6 +65,7 @@ root.render(
     <App
       seatData={seatData}
       seatPricing={seatPricing}
+      seatMetadata={seatMetadata}
       isCustomerPremiumMember={true}
     />
   </StrictMode>,
