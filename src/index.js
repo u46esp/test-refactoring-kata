@@ -45,6 +45,7 @@ const seatData = {
 
 const seatMetadata = {
   furthest: {
+    zoneName: "Furthest",
     maxColumn: 10,
     maxRow: 3,
   },

@@ -9,12 +9,12 @@ export default function App({
   return (
     <div className="App">
       <h1>Hello Concert Seat Map</h1>
-      <SeatZoneInfo info={seatMetadata} pricing={seatPricing}></SeatZoneInfo>
+      <SeatPricingLegend info={seatMetadata} pricing={seatPricing} />
     </div>
   );
 }
 
-function SeatZoneInfo({ info, pricing }) {
+function SeatPricingLegend({ info, pricing }) {
   var allZoneInfos = [];
   for (const zone in info) {
     const priceInfo = pricing.find((p) => p.zone === zone);
@@ -25,8 +25,7 @@ function SeatZoneInfo({ info, pricing }) {
     <div class="SeatZoneInfo">
       {allZoneInfos.map((zoneInfo) => (
         <div>
-          <pre>{JSON.stringify(zoneInfo)}</pre>
-          <span>Zone: {zoneInfo.zone}</span>
+          <span style={{ paddingRight: "1em" }}>Zone: {zoneInfo.zoneName}</span>
           <span>Price: {zoneInfo.regularPrice}</span>
         </div>
       ))}
