@@ -14,3 +14,20 @@
   color: grey;
   text-decoration: line-through;
 }
+
+.columns-3 {
+  width: 100%;
+  display:flex;
+}
+
+.columns-3 > div {
+  width: 100%;
+  display:flex-item;
+  border: 1px solid red;
+}
+
+.seat {
+  display: inline-block;
+  width: 2em;
+  text-align: right;
+}

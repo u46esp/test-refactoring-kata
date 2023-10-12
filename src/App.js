@@ -14,6 +14,7 @@ export default function App({
         pricing={seatPricing}
         isCustomerPremiumMember={isCustomerPremiumMember}
       />
+      <SeatLayout seatData={seatData} seatMetadata={seatMetadata} />
     </div>
   );
 }
@@ -58,4 +59,36 @@ function SeatPricingLegend({ info, pricing, isCustomerPremiumMember = false }) {
       ))}
     </div>
   );
+}
+
+function SeatLayout({seatData, seatMetadata}) {
+  return <>
+    <div className="columns-3">
+      <div className="side">
+        Left Side
+        <SeatGroup seatData={seatData["leftside"]} seatMetadata={seatMetadata["leftside"]} />
+      </div>
+      <div className="middle">mid</div>
+      <div className="side">right</div>
+    </div>
+  </>
+}
+
+function SeatGroup({seatData, seatMetadata}) {
+  const maxRow = seatMetadata["maxRow"];
+  const rows = [ ...Array(maxRow).keys() ].map( i => i+1)
+  const maxColumn = seatMetadata["maxColumn"];
+  const columns = [ ...Array(maxColumn).keys() ].map( i => i+1)
+  // return
+  return <div>
+    {rows.map(i => {
+      return <div>
+        {columns.map(j => {
+          const seat = seatData.find(s => (s.row == i) && (s.column == j)) || { seatNumber: 'xx'}
+          return <span class="seat">{seat.seatNumber}</span>
+        })}
+      </div>
+    })}
+  </div>
+  
 }
