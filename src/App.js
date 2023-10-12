@@ -65,11 +65,14 @@ function SeatLayout({seatData, seatMetadata}) {
   return <>
     <div className="columns-3">
       <div className="side">
-        Left Side
+        {seatMetadata["leftside"].zoneName}
         <SeatGroup seatData={seatData["leftside"]} seatMetadata={seatMetadata["leftside"]} />
       </div>
       <div className="middle">mid</div>
-      <div className="side">right</div>
+      <div className="side">
+        {seatMetadata["rightside"].zoneName}
+        <SeatGroup seatData={seatData["rightside"]} seatMetadata={seatMetadata["rightside"]} />
+      </div>
     </div>
   </>
 }
@@ -79,7 +82,7 @@ function SeatGroup({seatData, seatMetadata}) {
   const rows = [ ...Array(maxRow).keys() ].map( i => i+1)
   const maxColumn = seatMetadata["maxColumn"];
   const columns = [ ...Array(maxColumn).keys() ].map( i => i+1)
-  // return
+
   return <div>
     {rows.map(i => {
       return <div>
