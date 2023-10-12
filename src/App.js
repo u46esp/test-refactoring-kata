@@ -33,19 +33,23 @@ function SeatPricingLegend({ info, pricing, isCustomerPremiumMember = false }) {
           {(() => {
             if (isCustomerPremiumMember) {
               return (
-                <>
-                  <span className="premium_price">
-                    Price: {zoneInfo.premiumMemberPrice}
+                <span className="price">
+                  Price: 
+                  <span className="premium-price">
+                    {zoneInfo.premiumMemberPrice}
                   </span>
-                  <span className="regular_price">
-                    Price: {zoneInfo.regularPrice}
+                  <span className="full-price-cross-out">
+                    {zoneInfo.regularPrice}
                   </span>
-                </>
+                </span>
               );
             } else {
               return (
-                <span className="regular_price">
-                  Price: {zoneInfo.regularPrice}
+                <span className="price">
+                  Price: 
+                  <span className="regular-price">
+                    {zoneInfo.regularPrice}
+                  </span>
                 </span>
               );
             }

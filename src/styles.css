@@ -2,3 +2,15 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+.premium-price {
+  margin-right: 0.25em;
+  color: crimson;
+  font-weight: bold;
+}
+
+.full-price-cross-out {
+  margin-right: 0.25em;
+  color: grey;
+  text-decoration: line-through;
+}
