@@ -63,6 +63,7 @@ function SeatPricingLegend({ info, pricing, isCustomerPremiumMember = false }) {
 
 function SeatLayout({seatData, seatMetadata}) {
   return <>
+    
     <div className="columns-3">
       <div className="side">
         {seatMetadata["leftside"].zoneName}
