@@ -31,3 +31,9 @@
   width: 2em;
   text-align: right;
 }
+
+.stage {
+  border: 1px solid darkslategrey;
+  color: darkslategrey;
+  height: 5em;
+}
