@@ -63,19 +63,15 @@ function SeatPricingLegend({ info, pricing, isCustomerPremiumMember = false }) {
 
 function SeatLayout({seatData, seatMetadata}) {
   return <>
-    
     <div className="columns-3">
       <div className="side">
-        {seatMetadata["leftside"].zoneName}
         <SeatGroup seatData={seatData["leftside"]} seatMetadata={seatMetadata["leftside"]} />
       </div>
       <div className="middle">
         <div className="stage">Stages </div>
-        {seatMetadata["vip"].zoneName}
         <SeatGroup seatData={seatData["vip"]} seatMetadata={seatMetadata["vip"]} />
       </div>
       <div className="side">
-        {seatMetadata["rightside"].zoneName}
         <SeatGroup seatData={seatData["rightside"]} seatMetadata={seatMetadata["rightside"]} />
       </div>
     </div>
@@ -88,17 +84,20 @@ function SeatGroup({seatData, seatMetadata}) {
   const maxColumn = seatMetadata["maxColumn"];
   const columns = [ ...Array(maxColumn).keys() ].map( i => i+1)
   const seatRowChars = "ABCDEFGHJKLMNPQRSTUVWXYZ"
-  const buildSeatNumber = (row, column) => `${seatRowChars[row - 1]}${column}`
+  const buildSeatNumber = (row, column) => `${seatRowChars[row - 1]}${column < 10 ? `0${column}` : column}`
 
   return <div>
-    {rows.map(i => {
-      return <div>
-        {columns.map(j => {
-          const seatNumber = buildSeatNumber(i, j)
-          return <span class="seat">{seatNumber}</span>
-        })}
-      </div>
-    })}
+    <p className="zone-name">{seatMetadata.zoneName}</p>
+    <div>
+      {rows.map(i => {
+        return <div>
+          {columns.map(j => {
+            const seatNumber = buildSeatNumber(i, j)
+            return <span class="seat">{seatNumber}</span>
+          })}
+        </div>
+      })}
+    </div>
   </div>
 }
 

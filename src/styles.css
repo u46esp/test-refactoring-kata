@@ -39,11 +39,17 @@
 .seat {
   display: inline-block;
   width: 2.5rem;
-  text-align: right;
+  text-align: center;
+  font-size: 0.8rem;
+  font-family: Consolas, Monaco, monospace;
 }
 
 .stage {
   border: 1px solid darkslategrey;
   color: darkslategrey;
   height: 5em;
+}
+
+.zone-name {
+  margin: 0.5em;
 }
