@@ -30,10 +30,12 @@
 .side {
   padding-top: 3em;
   flex: 1 5;
+  min-width: 150px;
 }
 
 .middle {
   flex: 5 1;
+  min-width: 900px;
 }
 
 .seat {
