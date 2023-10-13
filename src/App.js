@@ -87,16 +87,18 @@ function SeatGroup({seatData, seatMetadata}) {
   const rows = [ ...Array(maxRow).keys() ].map( i => i+1)
   const maxColumn = seatMetadata["maxColumn"];
   const columns = [ ...Array(maxColumn).keys() ].map( i => i+1)
+  const seatRowChars = "ABCDEFGHJKLMNPQRSTUVWXYZ"
+  const buildSeatNumber = (row, column) => `${seatRowChars[row - 1]}${column}`
 
   return <div>
     {rows.map(i => {
       return <div>
         {columns.map(j => {
-          const seat = seatData.find(s => (s.row == i) && (s.column == j)) || { seatNumber: 'xx'}
-          return <span class="seat">{seat.seatNumber}</span>
+          const seatNumber = buildSeatNumber(i, j)
+          return <span class="seat">{seatNumber}</span>
         })}
       </div>
     })}
   </div>
-  
 }
+
