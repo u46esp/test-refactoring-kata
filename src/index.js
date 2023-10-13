@@ -39,6 +39,16 @@ const seatMetadata = {
     maxColumn: 3,
     maxRow: 15,
   },
+  leftback: {
+    zoneName: "Left Back Side",
+    maxColumn: 3,
+    maxRow: 10,
+  },
+  rightback: {
+    zoneName: "Right Back Side",
+    maxColumn: 3,
+    maxRow: 10,
+  },
   standing: {
     zoneName: "Standing Area",
     maxColumn: 10,
@@ -54,6 +64,9 @@ const seatMetadata = {
 const seatData = {
   leftside: buildSeatData(seatMetadata["leftside"], 0.8),
   rightside: buildSeatData(seatMetadata["rightside"], 0.8),
+  leftback: buildSeatData(seatMetadata["leftback"], 0.8),
+  rightback: buildSeatData(seatMetadata["rightback"], 0.8),
+
   vip: buildSeatData(seatMetadata["vip"], 0.3),
   mid: buildSeatData(seatMetadata["mid"], 0.5),
   furthest: buildSeatData(seatMetadata["furthest"], 0.7),

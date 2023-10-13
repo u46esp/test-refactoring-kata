@@ -66,6 +66,7 @@ function SeatLayout({seatData, seatMetadata}) {
     <div className="columns-3">
       <div className="side">
         <SeatGroup seatData={seatData["leftside"]} seatMetadata={seatMetadata["leftside"]} />
+        <SeatGroup seatData={seatData["leftback"]} seatMetadata={seatMetadata["leftback"]} />
       </div>
       <div className="middle">
         <div className="stage">Stages </div>
@@ -75,6 +76,7 @@ function SeatLayout({seatData, seatMetadata}) {
       </div>
       <div className="side">
         <SeatGroup seatData={seatData["rightside"]} seatMetadata={seatMetadata["rightside"]} />
+        <SeatGroup seatData={seatData["rightback"]} seatMetadata={seatMetadata["rightback"]} />
       </div>
     </div>
   </>
