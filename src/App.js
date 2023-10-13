@@ -70,6 +70,8 @@ function SeatLayout({seatData, seatMetadata}) {
       </div>
       <div className="middle">
         <div className="stage">Stages </div>
+        {seatMetadata["vip"].zoneName}
+        <SeatGroup seatData={seatData["vip"]} seatMetadata={seatMetadata["vip"]} />
       </div>
       <div className="side">
         {seatMetadata["rightside"].zoneName}
