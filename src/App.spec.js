@@ -3,18 +3,7 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom'
 
 import App from './App';
-
-const buildSeatData = (seatMetadata, availabilityChance) => {
-  var seatData = []
-  for(var i = 1; i <= seatMetadata["maxRow"]; i++) {
-    for (var j = 1; j <= seatMetadata["maxColumn"]; j++) {
-      const availability = Math.random() > availabilityChance ? "Available" : "Taken";
-      seatData.push({ row: i, column: j, availability: availability });
-    }
-  }
-
-  return seatData;
-}
+import seatDataGenerator from "./SeatDataGenerator";
 
 const seatMetadata = {
   furthest: {zoneName: "Furthest",maxColumn: 20,maxRow: 6, },

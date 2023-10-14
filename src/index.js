@@ -1,5 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import seatDataGenerator from "./SeatDataGenerator";
 import "./styles.css";
 
 
@@ -7,18 +8,6 @@ import App from "./App";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
-
-const buildSeatData = (seatMetadata, availabilityChance) => {
-  var seatData = []
-  for(var i = 1; i <= seatMetadata["maxRow"]; i++) {
-    for (var j = 1; j <= seatMetadata["maxColumn"]; j++) {
-      const availability = Math.random() > availabilityChance ? "Available" : "Taken";
-      seatData.push({ row: i, column: j, availability: availability });
-    }
-  }
-
-  return seatData;
-}
 
 const seatMetadata = {
   furthest: { zoneName: "Furthest", maxColumn: 20, maxRow: 6, },
@@ -32,13 +21,13 @@ const seatMetadata = {
 };
 
 const seatData = {
-  leftside: buildSeatData(seatMetadata["leftside"], 0.95),
-  rightside: buildSeatData(seatMetadata["rightside"], 0.95),
-  leftback: buildSeatData(seatMetadata["leftback"], 0.95),
-  rightback: buildSeatData(seatMetadata["rightback"], 0.95),
-  vip: buildSeatData(seatMetadata["vip"], 0.95),
-  mid: buildSeatData(seatMetadata["mid"], 0.95),
-  furthest: buildSeatData(seatMetadata["furthest"], 0.95),
+  leftside: seatDataGenerator.buildSeatData(seatMetadata["leftside"], 0.95),
+  rightside: seatDataGenerator.buildSeatData(seatMetadata["rightside"], 0.95),
+  leftback: seatDataGenerator.buildSeatData(seatMetadata["leftback"], 0.95),
+  rightback: seatDataGenerator.buildSeatData(seatMetadata["rightback"], 0.95),
+  vip: seatDataGenerator.buildSeatData(seatMetadata["vip"], 0.95),
+  mid: seatDataGenerator.buildSeatData(seatMetadata["mid"], 0.95),
+  furthest: seatDataGenerator.buildSeatData(seatMetadata["furthest"], 0.95),
 };
 
 const seatPricing = [
