@@ -87,8 +87,8 @@ function SeatGroup({seatData, seatMetadata}) {
   const rows = [ ...Array(maxRow).keys() ].map( i => i+1)
   const maxColumn = seatMetadata["maxColumn"];
   const columns = [ ...Array(maxColumn).keys() ].map( i => i+1)
-  const seatRowChars = "ABCDEFGHJKLMNPQRSTUVWXYZ"
-  const buildSeatNumber = (row, column) => `${seatRowChars[row - 1]}${column < 10 ? `0${column}` : column}`
+  const seatRowChars = " ABCDEFGHJKLMNPQRSTUVWXYZ"
+  const buildSeatNumber = (row, column) => `${seatRowChars[row]}${column < 10 ? `0${column}` : column}`
 
   return <div>
     <p className="zone-name">{seatMetadata.zoneName}</p>
@@ -97,7 +97,7 @@ function SeatGroup({seatData, seatMetadata}) {
         return <div>
           {columns.map(j => {
             const seatNumber = buildSeatNumber(i, j)
-            return <span class="seat">{seatNumber}</span>
+            return <span className="seat">{seatNumber}</span>
           })}
         </div>
       })}
