@@ -97,7 +97,8 @@ function SeatGroup({seatData, seatMetadata}) {
         return <div>
           {columns.map(j => {
             const seatNumber = buildSeatNumber(i, j)
-            return <span className="seat">{seatNumber}</span>
+            const isSoldOut = seatData.find(s => s.row == i && s.column == j).availability == "Available"
+            return <span className={`seat circle ${isSoldOut ? "seat-sold-out" : ""}`}>{seatNumber}</span>
           })}
         </div>
       })}

@@ -62,14 +62,14 @@ const seatMetadata = {
 };
 
 const seatData = {
-  leftside: buildSeatData(seatMetadata["leftside"], 0.8),
-  rightside: buildSeatData(seatMetadata["rightside"], 0.8),
-  leftback: buildSeatData(seatMetadata["leftback"], 0.8),
-  rightback: buildSeatData(seatMetadata["rightback"], 0.8),
+  leftside: buildSeatData(seatMetadata["leftside"], 0.95),
+  rightside: buildSeatData(seatMetadata["rightside"], 0.95),
+  leftback: buildSeatData(seatMetadata["leftback"], 0.95),
+  rightback: buildSeatData(seatMetadata["rightback"], 0.95),
 
-  vip: buildSeatData(seatMetadata["vip"], 0.3),
-  mid: buildSeatData(seatMetadata["mid"], 0.5),
-  furthest: buildSeatData(seatMetadata["furthest"], 0.7),
+  vip: buildSeatData(seatMetadata["vip"], 0.95),
+  mid: buildSeatData(seatMetadata["mid"], 0.95),
+  furthest: buildSeatData(seatMetadata["furthest"], 0.95),
 };
 
 const seatPricing = [

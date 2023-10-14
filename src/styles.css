@@ -39,12 +39,26 @@
 }
 
 .seat {
+  margin: 0.125em;
   display: inline-block;
-  width: 2.5rem;
   text-align: center;
   font-size: 0.8rem;
   font-family: Consolas, Monaco, monospace;
+  line-height: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: lightgreen;
+  border-radius: 50%;
 }
+
+.seat-sold-out {
+  background-color: grey;
+}
+
+.text {
+  margin: auto;
+}
+
 
 .stage {
   border: 1px solid darkslategrey;
