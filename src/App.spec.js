@@ -17,46 +17,14 @@ const buildSeatData = (seatMetadata, availabilityChance) => {
 }
 
 const seatMetadata = {
-  furthest: {
-    zoneName: "Furthest",
-    maxColumn: 20,
-    maxRow: 6,
-  },
-  mid: {
-    zoneName: "Middle Area",
-    maxColumn: 20,
-    maxRow: 10,
-  },
-  leftside: {
-    zoneName: "Left Side",
-    maxColumn: 3,
-    maxRow: 15,
-  },
-  rightside: {
-    zoneName: "Right Side",
-    maxColumn: 3,
-    maxRow: 15,
-  },
-  leftback: {
-    zoneName: "Left Back Side",
-    maxColumn: 3,
-    maxRow: 10,
-  },
-  rightback: {
-    zoneName: "Right Back Side",
-    maxColumn: 3,
-    maxRow: 10,
-  },
-  standing: {
-    zoneName: "Standing Area",
-    maxColumn: 10,
-    maxRow: 3,
-  },
-  vip: {
-    zoneName: "VIP with Hi - Touch",
-    maxColumn: 20,
-    maxRow: 3,
-  },
+  furthest: {zoneName: "Furthest",maxColumn: 20,maxRow: 6, },
+  mid: {zoneName: "Middle Area",maxColumn: 20,maxRow: 10, },
+  leftside: {zoneName: "Left Side",maxColumn: 3,maxRow: 15, },
+  rightside: {zoneName: "Right Side",maxColumn: 3,maxRow: 15, },
+  leftback: {zoneName: "Left Back Side",maxColumn: 3,maxRow: 10, },
+  rightback: {zoneName: "Right Back Side",maxColumn: 3,maxRow: 10, },
+  standing: {zoneName: "Standing Area",maxColumn: 10,maxRow: 3, },
+  vip: {zoneName: "VIP with Hi - Touch",maxColumn: 20,maxRow: 3, },
 };
 
 const seatPricing = [
@@ -72,14 +40,13 @@ const seatPricing = [
 ];
 
 const seatData = {
-  leftside: buildSeatData(seatMetadata["leftside"], 0.95),
-  rightside: buildSeatData(seatMetadata["rightside"], 0.95),
-  leftback: buildSeatData(seatMetadata["leftback"], 0.95),
-  rightback: buildSeatData(seatMetadata["rightback"], 0.95),
-
-  vip: buildSeatData(seatMetadata["vip"], 0.95),
-  mid: buildSeatData(seatMetadata["mid"], 0.95),
-  furthest: buildSeatData(seatMetadata["furthest"], 0.95),
+  leftside: seatDataGenerator.buildSeatData(seatMetadata["leftside"], 0.95),
+  rightside: seatDataGenerator.buildSeatData(seatMetadata["rightside"], 0.95),
+  leftback: seatDataGenerator.buildSeatData(seatMetadata["leftback"], 0.95),
+  rightback: seatDataGenerator.buildSeatData(seatMetadata["rightback"], 0.95),
+  vip: seatDataGenerator.buildSeatData(seatMetadata["vip"], 0.95),
+  mid: seatDataGenerator.buildSeatData(seatMetadata["mid"], 0.95),
+  furthest: seatDataGenerator.buildSeatData(seatMetadata["furthest"], 0.95),
 };
 
 describe('App', () => {
