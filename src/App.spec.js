@@ -1,19 +1,19 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom'
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
 
-import App from './App';
+import App from "./App";
 import seatDataGenerator from "./SeatDataGenerator";
 
 const seatMetadata = {
-  furthest: {zoneName: "Furthest",maxColumn: 20,maxRow: 6, },
-  mid: {zoneName: "Middle Area",maxColumn: 20,maxRow: 10, },
-  leftside: {zoneName: "Left Side",maxColumn: 3,maxRow: 15, },
-  rightside: {zoneName: "Right Side",maxColumn: 3,maxRow: 15, },
-  leftback: {zoneName: "Left Back Side",maxColumn: 3,maxRow: 10, },
-  rightback: {zoneName: "Right Back Side",maxColumn: 3,maxRow: 10, },
-  standing: {zoneName: "Standing Area",maxColumn: 10,maxRow: 3, },
-  vip: {zoneName: "VIP with Hi - Touch",maxColumn: 20,maxRow: 3, },
+  furthest: { zoneName: "Furthest", maxColumn: 20, maxRow: 6 },
+  mid: { zoneName: "Middle Area", maxColumn: 20, maxRow: 10 },
+  leftside: { zoneName: "Left Side", maxColumn: 3, maxRow: 15 },
+  rightside: { zoneName: "Right Side", maxColumn: 3, maxRow: 15 },
+  leftback: { zoneName: "Left Back Side", maxColumn: 3, maxRow: 10 },
+  rightback: { zoneName: "Right Back Side", maxColumn: 3, maxRow: 10 },
+  standing: { zoneName: "Standing Area", maxColumn: 10, maxRow: 3 },
+  vip: { zoneName: "VIP with Hi - Touch", maxColumn: 20, maxRow: 3 },
 };
 
 const seatPricing = [
@@ -38,21 +38,26 @@ const seatData = {
   furthest: seatDataGenerator.buildSeatData(seatMetadata["furthest"], 0.95),
 };
 
-describe('App', () => {
+describe("App", () => {
   beforeEach(() => {
-    jest.clearAllMocks()
-  })
+    jest.clearAllMocks();
+  });
 
-  it('renders', () => {
-    render(<App       
-      seatData={seatData}
-      seatPricing={seatPricing}
-      seatMetadata={seatMetadata} />);
-    expect(screen.getByText('Hello Concert Seat Map')).toBeInTheDocument();
-  })
-  
-  it('cannot renders', () => {
+  it("renders", () => {
+    render(
+      <App
+        seatData={seatData}
+        seatPricing={seatPricing}
+        seatMetadata={seatMetadata}
+      />,
+    );
+    expect(screen.getByText("Hello Concert Seat Map")).toBeInTheDocument();
+  });
+
+  it("cannot renders", () => {
     console.error = jest.fn();
-    expect(() => { render(<App />) }).toThrow()
-  })
-})
+    expect(() => {
+      render(<App />);
+    }).toThrow();
+  });
+});

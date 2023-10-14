@@ -33,7 +33,7 @@ function SeatPricingLegend({ info, pricing, isCustomerPremiumMember = false }) {
             if (isCustomerPremiumMember) {
               return (
                 <span className="price">
-                  Price: 
+                  Price:
                   <span className="premium-price">
                     {zoneInfo.premiumMemberPrice}
                   </span>
@@ -45,10 +45,8 @@ function SeatPricingLegend({ info, pricing, isCustomerPremiumMember = false }) {
             } else {
               return (
                 <span className="price">
-                  Price: 
-                  <span className="regular-price">
-                    {zoneInfo.regularPrice}
-                  </span>
+                  Price:
+                  <span className="regular-price">{zoneInfo.regularPrice}</span>
                 </span>
               );
             }
@@ -59,48 +57,93 @@ function SeatPricingLegend({ info, pricing, isCustomerPremiumMember = false }) {
   );
 }
 
-function SeatLayout({seatData, seatMetadata}) {
-  return <>
-    <div className="columns-3">
-      <div className="side">
-        <SeatGroup keyPrefix="leftside" seatData={seatData["leftside"]} seatMetadata={seatMetadata["leftside"]} />
-        <SeatGroup keyPrefix="leftback" seatData={seatData["leftback"]} seatMetadata={seatMetadata["leftback"]} />
-      </div>
-      <div className="middle">
-        <div className="stage">Stages </div>
-        <SeatGroup keyPrefix="vip" seatData={seatData["vip"]} seatMetadata={seatMetadata["vip"]} />
-        <SeatGroup keyPrefix="mid" seatData={seatData["mid"]} seatMetadata={seatMetadata["mid"]} />
-        <SeatGroup keyPrefix="furthest" seatData={seatData["furthest"]} seatMetadata={seatMetadata["furthest"]} />
-      </div>
-      <div className="side">
-        <SeatGroup keyPrefix="rightside" seatData={seatData["rightside"]} seatMetadata={seatMetadata["rightside"]} />
-        <SeatGroup keyPrefix="rightback" seatData={seatData["rightback"]} seatMetadata={seatMetadata["rightback"]} />
-      </div>
-    </div>
-  </>
-}
-
-function SeatGroup({keyPrefix, seatData, seatMetadata}) {
-  const maxRow = seatMetadata["maxRow"];
-  const rows = [ ...Array(maxRow).keys() ].map( i => i+1)
-  const maxColumn = seatMetadata["maxColumn"];
-  const columns = [ ...Array(maxColumn).keys() ].map( i => i+1)
-  const seatRowChars = " ABCDEFGHJKLMNPQRSTUVWXYZ"
-  const buildSeatNumber = (row, column) => `${seatRowChars[row]}${column < 10 ? `0${column}` : column}`
-
-  return <div>
-    <p className="zone-name">{seatMetadata.zoneName}</p>
-    <div>
-      {rows.map(i => {
-        return <div key={`seat-${keyPrefix}-row-${i}`}>
-          {columns.map(j => {
-            const seatNumber = buildSeatNumber(i, j)
-            const isSoldOut = seatData.find(s => s.row == i && s.column == j).availability == "Available"
-            return <span key={`seat-number-${keyPrefix}-${seatNumber}`} className={`seat circle ${isSoldOut ? "seat-sold-out" : ""}`}>{seatNumber}</span>
-          })}
+function SeatLayout({ seatData, seatMetadata }) {
+  return (
+    <>
+      <div className="columns-3">
+        <div className="side">
+          <SeatGroup
+            keyPrefix="leftside"
+            seatData={seatData["leftside"]}
+            seatMetadata={seatMetadata["leftside"]}
+          />
+          <SeatGroup
+            keyPrefix="leftback"
+            seatData={seatData["leftback"]}
+            seatMetadata={seatMetadata["leftback"]}
+          />
         </div>
-      })}
-    </div>
-  </div>
+        <div className="middle">
+          <div className="stage">Stages </div>
+          <SeatGroup
+            keyPrefix="vip"
+            seatData={seatData["vip"]}
+            seatMetadata={seatMetadata["vip"]}
+          />
+          <SeatGroup
+            keyPrefix="mid"
+            seatData={seatData["mid"]}
+            seatMetadata={seatMetadata["mid"]}
+          />
+          <SeatGroup
+            keyPrefix="furthest"
+            seatData={seatData["furthest"]}
+            seatMetadata={seatMetadata["furthest"]}
+          />
+        </div>
+        <div className="side">
+          <SeatGroup
+            keyPrefix="rightside"
+            seatData={seatData["rightside"]}
+            seatMetadata={seatMetadata["rightside"]}
+          />
+          <SeatGroup
+            keyPrefix="rightback"
+            seatData={seatData["rightback"]}
+            seatMetadata={seatMetadata["rightback"]}
+          />
+        </div>
+      </div>
+    </>
+  );
 }
 
+function SeatGroup({ keyPrefix, seatData, seatMetadata }) {
+  const maxRow = seatMetadata["maxRow"];
+  const rows = [...Array(maxRow).keys()].map((i) => i + 1);
+  const maxColumn = seatMetadata["maxColumn"];
+  const columns = [...Array(maxColumn).keys()].map((i) => i + 1);
+  const seatRowChars = " ABCDEFGHJKLMNPQRSTUVWXYZ";
+  const buildSeatNumber = (row, column) =>
+    `${seatRowChars[row]}${column < 10 ? `0${column}` : column}`;
+
+  return (
+    <div>
+      <p className="zone-name">{seatMetadata.zoneName}</p>
+      <div>
+        {rows.map((i) => {
+          return (
+            <div key={`seat-${keyPrefix}-row-${i}`}>
+              {columns.map((j) => {
+                const seatNumber = buildSeatNumber(i, j);
+                const isSoldOut =
+                  seatData.find((s) => s.row == i && s.column == j)
+                    .availability == "Available";
+                return (
+                  <span
+                    key={`seat-number-${keyPrefix}-${seatNumber}`}
+                    className={`seat circle ${
+                      isSoldOut ? "seat-sold-out" : ""
+                    }`}
+                  >
+                    {seatNumber}
+                  </span>
+                );
+              })}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}

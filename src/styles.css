@@ -15,15 +15,14 @@
   text-decoration: line-through;
 }
 
-
 .columns-3 {
   width: 100%;
-  display:flex;
+  display: flex;
 }
 
 .columns-3 > div {
   width: 100%;
-  display:flex-item;
+  display: flex-item;
   border: 1px solid red;
 }
 
@@ -44,9 +43,9 @@
   text-align: center;
   font-size: 0.75rem;
   font-family: Consolas, Monaco, monospace;
-  line-height: 2.0rem;
-  width: 2.0rem;
-  height: 2.0rem;
+  line-height: 2rem;
+  width: 2rem;
+  height: 2rem;
   background-color: lightgreen;
   border-radius: 50%;
 }
@@ -59,7 +58,6 @@
 .text {
   margin: auto;
 }
-
 
 .stage {
   border: 1px solid darkslategrey;
