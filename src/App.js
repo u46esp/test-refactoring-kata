@@ -1,5 +1,3 @@
-import "./styles.css";
-
 export default function App({
   seatData,
   seatPricing,
@@ -27,7 +25,7 @@ function SeatPricingLegend({ info, pricing, isCustomerPremiumMember = false }) {
   }
 
   return (
-    <div class="SeatZoneInfo">
+    <div className="SeatZoneInfo">
       {allZoneInfos.map((zoneInfo) => (
         <div>
           <span style={{ paddingRight: "1em" }}>Zone: {zoneInfo.zoneName}</span>
