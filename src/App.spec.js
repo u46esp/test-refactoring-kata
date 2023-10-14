@@ -83,6 +83,10 @@ const seatData = {
 };
 
 describe('App', () => {
+  beforeEach(() => {
+    jest.clearAllMocks()
+  })
+
   it('renders', () => {
     render(<App       
       seatData={seatData}
@@ -92,6 +96,7 @@ describe('App', () => {
   })
   
   it('cannot renders', () => {
+    console.error = jest.fn();
     expect(() => { render(<App />) }).toThrow()
   })
 })
