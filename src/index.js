@@ -77,6 +77,8 @@ const seatPricing = [
   { zone: "mid", regularPrice: 3500, premiumMemberPrice: 2975 },
   { zone: "leftside", regularPrice: 4000, premiumMemberPrice: 3400 },
   { zone: "rightside", regularPrice: 4000, premiumMemberPrice: 3400 },
+  { zone: "leftback", regularPrice: 3000, premiumMemberPrice: 2500 },
+  { zone: "rightback", regularPrice: 3000, premiumMemberPrice: 2500 },
   { zone: "standing", regularPrice: 3000, premiumMemberPrice: 2550 },
   { zone: "frontmost", regularPrice: 6000, premiumMemberPrice: 5100 },
   { zone: "vip", regularPrice: 2500, premiumMemberPrice: 6375 },
