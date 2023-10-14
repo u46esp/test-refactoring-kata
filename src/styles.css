@@ -53,6 +53,7 @@
 
 .seat-sold-out {
   background-color: grey;
+  cursor: not-allowed;
 }
 
 .text {
