@@ -42,11 +42,11 @@
   margin: 0.125em;
   display: inline-block;
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-family: Consolas, Monaco, monospace;
-  line-height: 2.5rem;
-  width: 2.5rem;
-  height: 2.5rem;
+  line-height: 2.0rem;
+  width: 2.0rem;
+  height: 2.0rem;
   background-color: lightgreen;
   border-radius: 50%;
 }
