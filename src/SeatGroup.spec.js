@@ -25,8 +25,9 @@ describe('SeatGroup', () => {
       for (var j = 1; j <= seatMetadata["maxColumn"]; j++) {
         const seatNumber = buildSeatNumber(i, j)
         const seat = seatData.find((s) => s.row == i && s.column == j)
+        const expectedClass = seat.availability === "Available" ? "seat-available" : "seat-sold-out"
         expect(screen.getByText(seatNumber)).toBeInTheDocument()
-        expect(screen.getByText(seatNumber)).toHaveClass(seat.availability === "Available" ? "seat-available" : "seat-sold-out")
+        expect(screen.getByText(seatNumber)).toHaveClass(expectedClass)
       }
     }
   })
