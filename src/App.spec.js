@@ -56,8 +56,6 @@ describe("App", () => {
 
   it("cannot renders", () => {
     console.error = jest.fn();
-    expect(() => {
-      render(<App />);
-    }).toThrow();
+    expect(() => { render(<App />); }).toThrow();
   });
 });
