@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { SeatPricingForZone } from "./SeatPricingForZone";
-import {expect, jest, it} from '@jest/globals';
+import { expect, jest, it } from '@jest/globals';
 
 
 describe('SeatPricingForZone', () => {
@@ -11,7 +11,7 @@ describe('SeatPricingForZone', () => {
     const premiumMemberPrice = 150;
     const isCustomerPremiumMember = false;
     const zoneInfo = { regularPrice, premiumMemberPrice }
-    render(<SeatPricingForZone 
+    render(<SeatPricingForZone
       zoneInfo={zoneInfo}
       isCustomerPremiumMember={isCustomerPremiumMember} />)
     expect(true).toBeTruthy()
@@ -20,14 +20,14 @@ describe('SeatPricingForZone', () => {
   it.each`
     seatArea        | isCustomerPremiumMember | regularPrice | canSeePremiumPrice | premiumMemberPrice
     ${"furthest"}   | ${false}                | ${200}       | ${false}           | ${150}
-  `("Should display its price(s) correctly, given isCustomerPremiumMember : $isCustomerPremiumMember and booked for seatArea : $seatArea", 
-    ({seatArea, isCustomerPremiumMember, regularPrice, canSeePremiumPrice, premiumMemberPrice}) => {
-    const zoneInfo = { regularPrice, premiumMemberPrice }
-    render(<SeatPricingForZone 
-      zoneInfo={zoneInfo}
-      isCustomerPremiumMember={isCustomerPremiumMember} />)
-    expect(true).toBeTruthy()
-  })
+  `("Should display its price(s) correctly, given isCustomerPremiumMember : $isCustomerPremiumMember and booked for seatArea : $seatArea",
+    ({ seatArea, isCustomerPremiumMember, regularPrice, canSeePremiumPrice, premiumMemberPrice }) => {
+      const zoneInfo = { regularPrice, premiumMemberPrice }
+      render(<SeatPricingForZone
+        zoneInfo={zoneInfo}
+        isCustomerPremiumMember={isCustomerPremiumMember} />)
+      expect(true).toBeTruthy()
+    })
 })
 
 //   // it.each`

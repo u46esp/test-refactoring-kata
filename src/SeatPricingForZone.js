@@ -1,5 +1,3 @@
-
-
 export const SeatPricingForZone = ({ zoneInfo, isCustomerPremiumMember = false }) => {
   if (isCustomerPremiumMember) {
     return (<>
@@ -13,7 +11,7 @@ export const SeatPricingForZone = ({ zoneInfo, isCustomerPremiumMember = false }
           {zoneInfo.regularPrice}
         </span>
       </span>
-      </>);
+    </>);
   }
 
   return (<>
