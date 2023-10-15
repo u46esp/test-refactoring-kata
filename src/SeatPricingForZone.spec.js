@@ -6,17 +6,6 @@ import { expect, jest, it } from '@jest/globals';
 
 
 describe('SeatPricingForZone', () => {
-  it("Should display its price", () => {
-    const regularPrice = 200;
-    const premiumMemberPrice = 150;
-    const isCustomerPremiumMember = false;
-    const zoneInfo = { regularPrice, premiumMemberPrice }
-    render(<SeatPricingForZone
-      zoneInfo={zoneInfo}
-      isCustomerPremiumMember={isCustomerPremiumMember} />)
-    expect(true).toBeTruthy()
-  })
-
   it.each`
     seatArea        | isCustomerPremiumMember | regularPrice | canSeePremiumPrice | premiumMemberPrice
     ${"furthest"}   | ${false}                | ${200}       | ${false}           | ${150}
