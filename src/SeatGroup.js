@@ -29,9 +29,10 @@ const SeatGroup = ({ keyPrefix, seatData, seatMetadata }) => {
   );
 }
 
-const isSeatSoldOut = (seatData, row, col) => seatData
-  .find((s) => s.row == row && s.column == col)
-  .availability == "Available"
+const isSeatSoldOut = (seatData, row, col) => {
+  const seat = seatData.find((s) => s.row == row && s.column == col)
+  return seat?.availability == "Available" || false
+}
 
 const buildRange = (from, to) => [...Array(to).keys()].map((i) => i + from)
 
