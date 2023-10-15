@@ -2,7 +2,8 @@
 
 export const SeatPricingForZone = ({ zoneInfo, isCustomerPremiumMember = false }) => {
   if (isCustomerPremiumMember) {
-    return (
+    return (<>
+      <span style={{ paddingRight: "1em" }}>Zone: {zoneInfo.zoneName}</span>
       <span className="price">
         Price:
         <span className="premium-price">
@@ -12,40 +13,14 @@ export const SeatPricingForZone = ({ zoneInfo, isCustomerPremiumMember = false }
           {zoneInfo.regularPrice}
         </span>
       </span>
-    );
+      </>);
   }
 
-  return (
+  return (<>
+    <span style={{ paddingRight: "1em" }}>Zone: {zoneInfo.zoneName}</span>
     <span className="price">
       Price:
       <span className="regular-price">{zoneInfo.regularPrice}</span>
     </span>
-  );
-
-  // return (
-  //   <>
-  //     <div>{JSON.stringify(zoneInfo)}</div>
-  //     <div>{JSON.stringify(isCustomerPremiumMember)}</div>
-  //   </>
-  // )
-  // if (isCustomerPremiumMember) {
-  //   return (
-  //     <span className="price">
-  //       Price:
-  //       <span className="premium-price">
-  //         {zoneInfo.premiumMemberPrice}
-  //       </span>
-  //       <span className="full-price-cross-out">
-  //         {zoneInfo.regularPrice}
-  //       </span>
-  //     </span>
-  //   );
-  // } else {
-  //   return (
-  //     <span className="price">
-  //       Price:
-  //       <span className="regular-price">{zoneInfo.regularPrice}</span>
-  //     </span>
-  //   );
-  // }
+  </>);
 };
