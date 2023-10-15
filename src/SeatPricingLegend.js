@@ -1,3 +1,5 @@
+import { SeatPricingForZone } from "./SeatPricingForZone";
+
 const SeatPricingLegend = ({ info, pricing, isCustomerPremiumMember = false }) => {
   var allZoneInfos = [];
   for (const zone in info) {
@@ -10,28 +12,7 @@ const SeatPricingLegend = ({ info, pricing, isCustomerPremiumMember = false }) =
       {allZoneInfos.map((zoneInfo) => (
         <div key={`seat-zone-info-zone-${zoneInfo.zone}`}>
           <span style={{ paddingRight: "1em" }}>Zone: {zoneInfo.zoneName}</span>
-          {(() => {
-            if (isCustomerPremiumMember) {
-              return (
-                <span className="price">
-                  Price:
-                  <span className="premium-price">
-                    {zoneInfo.premiumMemberPrice}
-                  </span>
-                  <span className="full-price-cross-out">
-                    {zoneInfo.regularPrice}
-                  </span>
-                </span>
-              );
-            } else {
-              return (
-                <span className="price">
-                  Price:
-                  <span className="regular-price">{zoneInfo.regularPrice}</span>
-                </span>
-              );
-            }
-          })()}
+          <SeatPricingForZone zoneInfo={zoneInfo} isCustomerPremiumMember={isCustomerPremiumMember} />
         </div>
       ))}
     </div>
