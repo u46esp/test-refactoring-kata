@@ -1,21 +1,30 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
+import { expect, it } from '@jest/globals';
 import "@testing-library/jest-dom";
-import { SeatPricingForZone } from "./SeatPricingForZone";
-import { expect, jest, it } from '@jest/globals';
 
+import { SeatPricingForZone } from "./SeatPricingForZone";
 
 describe('SeatPricingForZone', () => {
   it.each`
-    seatArea        | isCustomerPremiumMember | regularPrice | canSeePremiumPrice | premiumMemberPrice
+    zoneName        | isCustomerPremiumMember | regularPrice | canSeePremiumPrice | premiumMemberPrice
     ${"furthest"}   | ${false}                | ${200}       | ${false}           | ${150}
-  `("Should display its price(s) correctly, given isCustomerPremiumMember : $isCustomerPremiumMember and booked for seatArea : $seatArea",
-    ({ seatArea, isCustomerPremiumMember, regularPrice, canSeePremiumPrice, premiumMemberPrice }) => {
-      const zoneInfo = { regularPrice, premiumMemberPrice }
+  `("Should display its price(s) correctly, given isCustomerPremiumMember : $isCustomerPremiumMember and booked for zoneName : $zoneName",
+    ({ zoneName, isCustomerPremiumMember, regularPrice, canSeePremiumPrice, premiumMemberPrice }) => {
+      const zoneInfo = { zoneName, regularPrice, premiumMemberPrice }
       render(<SeatPricingForZone
         zoneInfo={zoneInfo}
         isCustomerPremiumMember={isCustomerPremiumMember} />)
-      expect(true).toBeTruthy()
+
+
+      expect(screen.getByText(regularPrice)).toBeInTheDocument()
+      expect(screen.getByText(zoneName, { exact: false })).toBeInTheDocument()
+
+      if (canSeePremiumPrice) {
+        expect(screen.getByText(premiumMemberPrice)).toBeInTheDocument()
+      } else {
+        expect(screen.queryByText(premiumMemberPrice)).not.toBeInTheDocument()
+      }
     })
 })
 
