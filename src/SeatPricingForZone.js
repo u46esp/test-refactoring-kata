@@ -1,9 +1,8 @@
 export const SeatPricingForZone = ({ zoneInfo, isCustomerPremiumMember = false }) => {
   if (isCustomerPremiumMember) {
     return (<>
-      <span style={{ paddingRight: "1em" }}>Zone: {zoneInfo.zoneName}</span>
+      <span className="legend-zone-name">{zoneInfo.zoneName}</span>
       <span className="price">
-        Price:
         <span className="premium-price">
           {zoneInfo.premiumMemberPrice}
         </span>
@@ -15,9 +14,8 @@ export const SeatPricingForZone = ({ zoneInfo, isCustomerPremiumMember = false }
   }
 
   return (<>
-    <span style={{ paddingRight: "1em" }}>Zone: {zoneInfo.zoneName}</span>
+    <span className="legend-zone-name">{zoneInfo.zoneName}</span>
     <span className="price">
-      Price:
       <span className="regular-price">{zoneInfo.regularPrice}</span>
     </span>
   </>);

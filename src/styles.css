@@ -3,6 +3,31 @@
   text-align: center;
 }
 
+.seat-zone-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 10% 1em 10%;
+}
+
+.seat-zone-info > div {
+  min-width: 25%;
+  text-align: left;
+  display: flex;
+}
+
+.seat-zone-info span.legend-zone-name {
+  min-width: 50%;
+  text-align: right;
+  padding-right: 0.5rem;
+}
+
+.seat-zone-info span.legend-zone-name::after {
+  content: ': ';
+}
+
+
 .premium-price {
   margin-right: 0.25em;
   color: crimson;
@@ -23,7 +48,7 @@
 .columns-3 > div {
   width: 100%;
   display: flex-item;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .side {
@@ -51,6 +76,7 @@
 }
 
 .seat-sold-out {
+  color: lightgray;
   background-color: grey;
   cursor: not-allowed;
 }
@@ -62,7 +88,11 @@
 .stage {
   border: 1px solid darkslategrey;
   color: darkslategrey;
+  background-color: lightgray;
   height: 5em;
+  font-size: 2.0rem;
+  line-height: 5em;
+  vertical-align: middle;
 }
 
 .zone-name {

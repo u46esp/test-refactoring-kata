@@ -8,7 +8,7 @@ const SeatPricingLegend = ({ info, pricing, isCustomerPremiumMember = false }) =
   }
 
   return (
-    <div className="SeatZoneInfo">
+    <div className="seat-zone-info">
       {allZoneInfos.map((zoneInfo) => (
         <div key={`seat-zone-info-zone-${zoneInfo.zone}`}>
           <SeatPricingForZone zoneInfo={zoneInfo} isCustomerPremiumMember={isCustomerPremiumMember} />
