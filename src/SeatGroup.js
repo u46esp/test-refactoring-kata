@@ -11,11 +11,11 @@ const SeatGroup = ({ keyPrefix, seatData, seatMetadata }) => {
             <div key={`seat-${keyPrefix}-row-${i}`}>
               {columns.map((j) => {
                 const seatNumber = buildSeatNumber(i, j);
-                const isSoldOut = isSeatSoldOut(seatData, i, j);
+                const isAvailable = isSeatAvailable(seatData, i, j);
                 return (
                   <span
                     key={`seat-number-${keyPrefix}-${seatNumber}`}
-                    className={`seat circle ${isSoldOut ? "seat-sold-out" : ""}`}
+                    className={`seat circle ${isAvailable ? "seat-available" :  "seat-sold-out"}`}
                   >
                     {seatNumber}
                   </span>
@@ -29,9 +29,9 @@ const SeatGroup = ({ keyPrefix, seatData, seatMetadata }) => {
   );
 }
 
-const isSeatSoldOut = (seatData, row, col) => {
+const isSeatAvailable = (seatData, row, col) => {
   const seat = seatData.find((s) => s.row == row && s.column == col)
-  return seat?.availability == "Available" || false
+  return seat?.availability === "Available"
 }
 
 const buildRange = (from, to) => [...Array(to).keys()].map((i) => i + from)
