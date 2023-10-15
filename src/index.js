@@ -20,12 +20,12 @@ const seatMetadata = {
 };
 
 const seatData = {
-  leftside: seatDataGenerator.buildSeatData(seatMetadata["leftside"], 0.95),
-  rightside: seatDataGenerator.buildSeatData(seatMetadata["rightside"], 0.95),
-  leftback: seatDataGenerator.buildSeatData(seatMetadata["leftback"], 0.95),
-  rightback: seatDataGenerator.buildSeatData(seatMetadata["rightback"], 0.95),
-  vip: seatDataGenerator.buildSeatData(seatMetadata["vip"], 0.95),
-  mid: seatDataGenerator.buildSeatData(seatMetadata["mid"], 0.95),
+  leftside: seatDataGenerator.buildSeatData(seatMetadata["leftside"], 0.55),
+  rightside: seatDataGenerator.buildSeatData(seatMetadata["rightside"], 0.55),
+  leftback: seatDataGenerator.buildSeatData(seatMetadata["leftback"], 0.65),
+  rightback: seatDataGenerator.buildSeatData(seatMetadata["rightback"], 0.65),
+  vip: seatDataGenerator.buildSeatData(seatMetadata["vip"], 0.75),
+  mid: seatDataGenerator.buildSeatData(seatMetadata["mid"], 0.85),
   furthest: seatDataGenerator.buildSeatData(seatMetadata["furthest"], 0.95),
 };
 
@@ -38,7 +38,7 @@ const seatPricing = [
   { zone: "rightback", regularPrice: 3000, premiumMemberPrice: 2500 },
   { zone: "standing", regularPrice: 3000, premiumMemberPrice: 2550 },
   { zone: "frontmost", regularPrice: 6000, premiumMemberPrice: 5100 },
-  { zone: "vip", regularPrice: 2500, premiumMemberPrice: 6375 },
+  { zone: "vip", regularPrice: 8000, premiumMemberPrice: 6375 },
 ];
 
 root.render(
