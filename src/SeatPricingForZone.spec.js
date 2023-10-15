@@ -25,14 +25,14 @@ describe('SeatPricingForZone', () => {
         zoneInfo={zoneInfo}
         isCustomerPremiumMember={isCustomerPremiumMember} />)
 
-
-      expect(screen.getByText(regularPrice)).toBeInTheDocument()
+      const formatPrice = (number) => new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(number);
+      expect(screen.getByText(formatPrice(regularPrice), { exact: false })).toBeInTheDocument()
       expect(screen.getByText(zoneName, { exact: false })).toBeInTheDocument()
 
       if (canSeePremiumPrice) {
-        expect(screen.getByText(premiumMemberPrice)).toBeInTheDocument()
+        expect(screen.getByText(formatPrice(premiumMemberPrice), { exact: false })).toBeInTheDocument()
       } else {
-        expect(screen.queryByText(premiumMemberPrice)).not.toBeInTheDocument()
+        expect(screen.queryByText(formatPrice(premiumMemberPrice), { exact: false })).not.toBeInTheDocument()
       }
     })
 })

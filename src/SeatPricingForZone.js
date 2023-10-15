@@ -4,10 +4,10 @@ export const SeatPricingForZone = ({ zoneInfo, isCustomerPremiumMember = false }
       <span className="legend-zone-name">{zoneInfo.zoneName}</span>
       <span className="price">
         <span className="premium-price">
-          {zoneInfo.premiumMemberPrice}
+          {formatPrice(zoneInfo.premiumMemberPrice)}
         </span>
         <span className="full-price-cross-out">
-          {zoneInfo.regularPrice}
+          {formatPrice(zoneInfo.regularPrice)}
         </span>
       </span>
     </>);
@@ -16,7 +16,9 @@ export const SeatPricingForZone = ({ zoneInfo, isCustomerPremiumMember = false }
   return (<>
     <span className="legend-zone-name">{zoneInfo.zoneName}</span>
     <span className="price">
-      <span className="regular-price">{zoneInfo.regularPrice}</span>
+      <span className="regular-price">{formatPrice(zoneInfo.regularPrice)}</span>
     </span>
   </>);
 };
+
+const formatPrice = (number) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'THB', maximumFractionDigits: 0 }).format(number);
