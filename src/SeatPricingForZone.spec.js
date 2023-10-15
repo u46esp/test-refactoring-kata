@@ -18,7 +18,7 @@ describe('SeatPricingForZone', () => {
     ${"standing"}   | ${true}                 | ${500}       | ${true}            | ${400}
     ${"frontmost"}  | ${true}                 | ${800}       | ${true}            | ${600}
     ${"hitouch"}    | ${false}                | ${1500}      | ${false}           | ${1200}
-      `("Given { isCustomerPremiumMember : $isCustomerPremiumMember, zoneName : $zoneName }, should display its price(s) correctly",
+      `("Given { isCustomerPremiumMember : $isCustomerPremiumMember, zoneName : $zoneName }, should display its name and price(s) correctly",
     ({ zoneName, isCustomerPremiumMember, regularPrice, canSeePremiumPrice, premiumMemberPrice }) => {
       const zoneInfo = { zoneName, regularPrice, premiumMemberPrice }
       render(<SeatPricingForZone
