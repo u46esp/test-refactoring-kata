@@ -21,50 +21,24 @@ export default function App({
 }
 
 function SeatLayout({ seatData, seatMetadata }) {
+  const SeatGroupFromData = ({ zone }) => <SeatGroup keyPrefix={zone} seatData={seatData[zone]} seatMetadata={seatMetadata[zone]} />
+
   return (
     <>
       <div className="columns-3">
         <div className="side">
-          <SeatGroup
-            keyPrefix="leftside"
-            seatData={seatData["leftside"]}
-            seatMetadata={seatMetadata["leftside"]}
-          />
-          <SeatGroup
-            keyPrefix="leftback"
-            seatData={seatData["leftback"]}
-            seatMetadata={seatMetadata["leftback"]}
-          />
+          <SeatGroupFromData zone="leftside" />
+          <SeatGroupFromData zone="leftback" />
         </div>
         <div className="middle">
-          <div className="stage">Stages </div>
-          <SeatGroup
-            keyPrefix="vip"
-            seatData={seatData["vip"]}
-            seatMetadata={seatMetadata["vip"]}
-          />
-          <SeatGroup
-            keyPrefix="mid"
-            seatData={seatData["mid"]}
-            seatMetadata={seatMetadata["mid"]}
-          />
-          <SeatGroup
-            keyPrefix="furthest"
-            seatData={seatData["furthest"]}
-            seatMetadata={seatMetadata["furthest"]}
-          />
+          <div className="stage">Stage</div>
+          <SeatGroupFromData zone="vip" />
+          <SeatGroupFromData zone="mid" />
+          <SeatGroupFromData zone="furthest" />
         </div>
         <div className="side">
-          <SeatGroup
-            keyPrefix="rightside"
-            seatData={seatData["rightside"]}
-            seatMetadata={seatMetadata["rightside"]}
-          />
-          <SeatGroup
-            keyPrefix="rightback"
-            seatData={seatData["rightback"]}
-            seatMetadata={seatMetadata["rightback"]}
-          />
+          <SeatGroupFromData zone="rightside" />
+          <SeatGroupFromData zone="rightback" />
         </div>
       </div>
     </>
