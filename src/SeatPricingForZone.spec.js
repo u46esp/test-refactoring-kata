@@ -1,23 +1,35 @@
-// import React from "react";
-// import { render, screen } from "@testing-library/react";
-// import "@testing-library/jest-dom";
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
+import { SeatPricingForZone } from "./SeatPricingForZone";
+import {expect, jest, it} from '@jest/globals';
 
-// import SeatPricingForZone from "./SeatPricingForZone"
 
-// describe('SeatPricingForZone', () => {
-//   it.each`
-//     seatArea        | isCustomerPremiumMember | expectedNormalPrice | canSeePremiumPrice | expectedPremiumPrice
-//     ${"furthest"}   | ${false}                | ${200}              | ${false}           | ${150}
-//   `("Should display its price(s) correctly, given isCustomerPremiumMember : $isCustomerPremiumMember and booked for seatArea : $seatArea", 
-//     (seatArea, isCustomerPremiumMember, expectedNormalPrice, canSeePremiumPrice, expectedPremiumPrice) => {
-//     // const info, pricing, isCustomerPremiumMember
-//     const info = {}
-//     const pricing = {}
-//     render(<SeatPricingLegend 
-//       info={info}
-//       pricing={seatPricing}
-//       isCustomerPremiumMember={isCustomerPremiumMember} />)
-//   })
+describe('SeatPricingForZone', () => {
+  it("Should display its price", () => {
+    const regularPrice = 200;
+    const premiumMemberPrice = 150;
+    const isCustomerPremiumMember = false;
+    const zoneInfo = { regularPrice, premiumMemberPrice }
+    render(<SeatPricingForZone 
+      zoneInfo={zoneInfo}
+      isCustomerPremiumMember={isCustomerPremiumMember} />)
+    expect(true).toBeTruthy()
+  })
+
+  it.each`
+    seatArea        | isCustomerPremiumMember | regularPrice | canSeePremiumPrice | premiumMemberPrice
+    ${"furthest"}   | ${false}                | ${200}       | ${false}           | ${150}
+  `("Should display its price(s) correctly, given isCustomerPremiumMember : $isCustomerPremiumMember and booked for seatArea : $seatArea", 
+    ({seatArea, isCustomerPremiumMember, regularPrice, canSeePremiumPrice, premiumMemberPrice}) => {
+    const zoneInfo = { regularPrice, premiumMemberPrice }
+    render(<SeatPricingForZone 
+      zoneInfo={zoneInfo}
+      isCustomerPremiumMember={isCustomerPremiumMember} />)
+    expect(true).toBeTruthy()
+  })
+})
+
 //   // it.each`
 //   //   seatArea        | isCustomerPremiumMember | expectedNormalPrice | canSeePremiumPrice | expectedPremiumPrice
 //   //   ${"furthest"}   | ${false}                | ${200}              | ${false}           | ${150}
