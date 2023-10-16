@@ -6,10 +6,15 @@ Welcome to test refactoring kata! In this codebase we aim to provide you with so
 
 To run the application run `$ npm start`. 
 
-To run the test suite, run `$ npm test` or `$ jest --watchAll`
+To run the test suite, run `$ npm test` or `$ jest --watchAll`. It should produce result like this screenshot:
+
+![Unit Test Results Screenshot](/jest-screenshot.png "Unit Test Results")
+
 
 ## About the application
 
 ![Hello Seat Screenshot](/app-screenshot.png "Hello Seat")
 
-This is an example of simple partial - finished seat map page of a ticket website. Currently there is no interaction of sorts yet, just pure data rendering.
+This is an example of simple partial - finished seat map page of a ticket website. Currently there is no interaction of sorts yet, just pure data rendering. The current seat layout is the fixed but seat status is randomized for each refresh.
+
+You can play around with params in `index.js` for example: changing value of `isCustomerPremiumMember` and see what happens. 
