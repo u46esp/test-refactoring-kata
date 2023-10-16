@@ -9,10 +9,13 @@
   flex-wrap: wrap;
   width: 80%;
   margin: 0 10% 1em 10%;
+  justify-content: center;
 }
 
 .seat-zone-info > div {
-  min-width: 25%;
+  margin-bottom: 0.25em;
+  margin-right: 1em;
+  min-width: 20em;
   text-align: left;
   display: flex;
 }
@@ -52,7 +55,7 @@
 }
 
 .side {
-  padding-top: 1em;
+  padding-top: 5em;
   flex: 1 5;
   min-width: 150px;
 }
