@@ -13,9 +13,13 @@ To run the test suite, run `$ npm test` or `$ jest --watchAll`. It should produc
 ![Unit Test Results Screenshot](/jest-screenshot.png "Unit Test Results")
 
 
-## About the application
+## About the business
 
 ![Hello Seat Screenshot](/app-screenshot.png "Hello Seat")
+
+"Hello Concert" itself is a concert organizer selling monthly concert series with each band coming in for each month. The business also sell the "premium membership" subscription for small fee in hope of attracting buyer to purchase the concert ticket every month. 
+
+## About the application
 
 This is an example of simple partial - finished seat map page of a ticket website. Currently there is no interaction of sorts yet, just pure data rendering. The current seat layout is the fixed but seat status is randomized for each refresh.
 
