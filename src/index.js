@@ -41,13 +41,16 @@ const seatPricing = [
   { zone: "vip", regularPrice: 8000, premiumMemberPrice: 6375 },
 ];
 
+const queryParams = new URLSearchParams(window.location.search)
+const isCustomerPremiumMember= queryParams.get('member') == "true"
+
 root.render(
   <StrictMode>
     <App
       seatData={seatData}
       seatPricing={seatPricing}
       seatMetadata={seatMetadata}
-      isCustomerPremiumMember={true}
+      isCustomerPremiumMember={isCustomerPremiumMember}
     />
   </StrictMode>,
 );

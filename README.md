@@ -19,7 +19,9 @@ To run the test suite, run `$ npm test` or `$ jest --watchAll`. It should produc
 
 This is an example of simple partial - finished seat map page of a ticket website. Currently there is no interaction of sorts yet, just pure data rendering. The current seat layout is the fixed but seat status is randomized for each refresh.
 
-You can play around with params in `index.js` for example: changing value of `isCustomerPremiumMember` and see what happens.
+You can control membership status by adding `member=true` as a URL params to show premium membership feature.
+
+You can play around with params in `index.js` for example: changing value of seat pricing and/or seat status distribution and see what happens.
 
 If you want some "anchoring point" in terms of not just refactoring the test / code itself, this can be the candidate feature for the codebase:
 
