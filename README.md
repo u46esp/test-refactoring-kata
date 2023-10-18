@@ -17,7 +17,7 @@ To run the test suite, run `$ npm test` or `$ jest --watchAll`. It should produc
 
 ![Hello Seat Screenshot](/app-screenshot.png "Hello Seat")
 
-"Hello Concert" itself is a concert organizer selling monthly concert series with each band coming in for each month. The business also sell the "premium membership" subscription for small fee in hope of attracting buyer to purchase the concert ticket every month. 
+"Hello Concert" itself is a concert organizer selling monthly concert series with each band coming in for each month. The business also sell the "premium membership" subscription for small fee in hope of attracting buyer to purchase the concert ticket every month. Think of it as a loss leader, similar to ultra - cheap "chicken rotisserie" in supermarket.
 
 ## About the application
 
