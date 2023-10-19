@@ -31,3 +31,5 @@ If you want some "anchoring point" in terms of not just refactoring the test / c
 
 - Show tooltip when hovering for 1 second on the seat, displaying zone, seat number, status, and price
 - Show tooltip when hovering on "red premium price" indicating that buyer get discounts courtesy of their membership subscription.
+
+And finally, if you want to take a look at author's kata attempt, you can look for some inspiration here: https://github.com/u46esp/test-refactoring-kata-personal-attempt
