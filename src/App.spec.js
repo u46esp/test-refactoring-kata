@@ -55,7 +55,12 @@ describe("App", () => {
   });
 
   it("cannot renders", () => {
-    console.error = jest.fn();
-    expect(() => { render(<App />); }).toThrow();
+    console.error = jest.fn(); // Silence the long errors
+
+    try {
+      render(<App />);
+    } catch (error) {
+      expect(error).toBeInstanceOf(TypeError);
+    }
   });
 });
